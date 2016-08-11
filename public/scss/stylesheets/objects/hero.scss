@@ -1,7 +1,7 @@
 
 .hero{
 	height: 80%;
-	@include coverBackground('/images/landing/landing_background_new.jpg');
+	@include coverBackground('/images/landing/dynamic.jpg');
 	background-color: $background;
 	position: relative;
 
