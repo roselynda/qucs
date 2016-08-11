@@ -1,0 +1,23 @@
+
+.results-block{
+	overflow: auto;
+	height: 100%;
+	background: $background;
+}
+
+.data-block{
+	padding: 20px 30px;
+	height: 100%;
+	overflow: auto;
+
+	.table{
+		th, td{
+			width: 50%;
+			padding: 15px 20px;
+		}
+
+		td.value-title{
+			color: $primary;
+		}
+	}
+}

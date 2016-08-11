@@ -1,0 +1,175 @@
+
+.navbar{
+	padding: 10px;
+	height: 60px;
+	background: $white;
+	margin-bottom: 10px !important;
+	width: 100%;
+
+	&.navbar-underline{
+		border-bottom: 1px solid $lightgray;
+	}
+
+	&.navbar-landing{
+		position: relative;	
+		background: transparent;
+		padding: 60px 10% 0;
+
+		.logo{
+			height: 50px !important;
+		}
+	}
+
+	&.navbar-fixed{
+		position: fixed;
+		top: 0;
+		z-index: 20;
+	}
+
+	.logo{
+		width: auto;
+		height: 40px;
+	}
+
+	ul.nav-landing-li{
+		li{
+			display: inline-block;
+			margin-left: 40px;
+
+			a{
+				font-size: 16px;
+				color: $white;
+				font-family: "ProximaNovaBold";
+			}
+
+			&.register{
+				border: 1px solid $white;
+				// background: $primary;
+				padding: 10px;
+				border-radius: 5px;
+
+				a{
+					font-size: 14px;
+					text-transform: uppercase;
+					padding: 0 15px;
+
+					&:last-of-type{
+						border-left: 1px solid $white;
+					}
+				}
+			}
+		}
+
+		&.nav-login{
+			li{
+				line-height: 40px;
+				margin-left: 20px;
+
+				a.button{
+					font-size: 14px;
+				}
+			}
+		}
+	}
+
+	.experiment-title{
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		cursor: pointer;
+
+		i.fa{
+			font-size: 15px;
+			vertical-align: baseline;
+			margin-left: 7px;
+		}
+	}
+
+	.nav-current-user{
+		border-left: 1px solid $lightgray;
+		padding: 10px;
+		margin-left: 15px;
+		height: 60px;
+		overflow: hidden;
+		vertical-align: middle;
+		display: flex;
+
+		& > *{
+			margin: 0 10px;
+			line-height: 40px;
+		}
+
+		h4{
+			font-size: 16px;
+		}
+
+		.user{
+			display: inline;
+			@include centerWithFlex();
+			width: 40px;
+			height: 40px;
+			border-radius: 100%;
+			overflow: hidden;
+			border: 2px solid $primary;
+			background: $background;
+
+			img{
+				object-fit: cover;
+			}
+
+			span{
+				color: $primary;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+
+		
+
+		i.fa{
+			color: $primary;
+		}
+	}
+}
+
+
+@media all and (max-width: 768px){
+
+	.navbar{
+
+		&.navbar-landing{
+			display: flex;
+			justify-content: space-between;
+			padding: 10px;
+
+			.logo{
+				height: 30px !important;
+			}
+		}
+
+		.navbar-right{
+			margin-top: 0;
+		}
+
+		ul.nav-landing-li{
+			li{
+				display: none;
+
+				&.register{
+					display: block;
+					padding: 7px;
+
+					a{
+						font-size: 13px;
+					}
+				}
+			}
+		}
+
+	}
+
+}
+
+
+

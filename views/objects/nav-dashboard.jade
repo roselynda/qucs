@@ -1,0 +1,34 @@
+- plantype = "intermediate";
+
+nav.navbar.navbar-underline.navbar-fixed
+	.navbar-left
+		.navbar-item
+			a(href="/dashboard"): img.logo(src="/images/logo-blue.png")
+
+	.navbar-right
+		.navbar-item
+			a#modal-button-create.button.is-primary Create New Experiment
+
+		.navbar-item
+			a.nav-current-user
+				h4.text-primary.is-inline Name
+				.user 
+					img(style="display: none" src="#")
+					span A
+				i.fa.fa-caret-down
+
+
+#dashboard-account.dropdown
+	.dropdown-user.is-clearfix
+		.user.is-pulled-left
+			img(style="display: none" src="#")
+			span A
+		.is-pulled-left
+			p#dropdownname User name
+			p#dropdownemail username@gmail.com
+			p Plan type: #[span#dropdownplanname.tag #{plantype}]
+
+	ul.dropdown-settings
+		li: a(href="/upgradeplan") Upgrade Plan
+		li: a(href="/settings") Account Settings
+		li#logoutuser: a Sign Out

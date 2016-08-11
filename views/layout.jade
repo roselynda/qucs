@@ -1,0 +1,62 @@
+doctype html
+html
+  head
+    title QuCs
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="icon", type="image/png", href="/images/favicon.png")
+
+    link(rel="stylesheet", href="libs/bulma.min.css")
+    link(rel='stylesheet', href='css/stylesheets/style.css')
+    link(rel="stylesheet", href="libs/font-awesome.min.css")
+    link(rel="stylesheet", href="libs/shepherd-theme-arrows.css")
+
+    script(src="/javascripts/libs/jquery.min.js")
+
+    script.
+        var pathname = window.location.pathname;
+
+        if(pathname === "/register" || pathname === "/signin"){
+            if(localStorage.getItem('current_user') !== null){
+                window.location = "/dashboard";
+            }
+        }
+        else if (pathname !== "/"){
+            if(localStorage.getItem('current_user') === null){
+                window.location = "/signin";
+            }
+        }
+
+  body
+
+    .mobile-block.is-text-centered
+        .mobile-block-content
+            img(src="/images/icon-desktop.png")
+            h4 Please view this site on a desktop for optimal performance.
+
+    block content
+
+    // JS
+    script(src="/javascripts/libs/fabric.min.js")
+    script(src="/javascripts/libs/plotly-latest.min.js")
+    script(src="/javascripts/libs/list.min.js")
+    script(src="/javascripts/libs/tether.js")
+    script(src="/javascripts/libs/shepherd.min.js")
+    
+    script(src="/javascripts/init.js")
+    script(src="/javascripts/experiment/custom-objects.js")
+    script(src="/javascripts/interactions/shepherd-tour.js")
+    script(src="/javascripts/experiment/events.js")
+    script(src="/javascripts/interactions/interactions.js")
+    script(src="/javascripts/experiment/editor.js")
+    script(src="/javascripts/experiment/canvas-actions.js")
+    script(src="/javascripts/interactions/user.js")
+    script(src="/javascripts/interactions/designs.js")
+    script(src="/javascripts/results/graph.js")
+
+    script.
+        // search
+        var options = {
+          valueNames: [ 'name' ]
+        };
+        var experimentList = new List('experiment_list', options);
+    

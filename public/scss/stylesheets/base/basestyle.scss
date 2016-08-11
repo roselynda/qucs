@@ -1,0 +1,30 @@
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+}
+
+body{
+	font: 14px "ProximaNovaRegular", Helvetica, Arial, sans-serif;
+	background: $white;
+	color: $graytext;
+
+	&.no-scroll{
+		overflow: hidden;
+	}
+}
+
+a{
+	color: $primary;
+
+	&:hover{
+		color: darken($primary, 10%);
+	}
+}
+
+.clear-fix{
+	clear: both;
+}

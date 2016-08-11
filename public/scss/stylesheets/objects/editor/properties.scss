@@ -1,0 +1,28 @@
+.properties-panel{
+	padding: 10px 20px;
+	max-height: calc(100% - 270px);
+	overflow: auto;
+
+	.component-description{
+		background: $background;
+		padding: 20px;
+		margin: -10px -20px 10px;
+	}
+
+	.property-row{
+		@include flex(nowrap);
+		padding: 10px 0;
+
+		p{
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			height: 30px;
+			@include flex-width(60%);
+		}
+
+		.input{
+			@include flex-width(40%);
+		}
+	}
+}

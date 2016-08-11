@@ -1,0 +1,47 @@
+
+
+
+mixin addTeamMember(imgurl, name, status)
+	.team-member-container
+		.team-member
+			a.modal-button-confirmremove.close: i.fa.fa-times
+			img(src=imgurl)
+		h4= name
+		p= status
+
+#modal-create.modal
+	.modal-background
+	.modal-content
+		button.modal-close
+		.box.is-text-centered
+			h2.text-primary Create Experiment
+
+			.notification.is-danger(style="display: none")
+				| There isn't a user with that email address. The user needs to register with QuCs before being invited into a project.
+
+			.control
+				label Experiment Name
+				input#input_experiment_name.input(type="text", placeholder="")
+
+			//- .control
+				label Add Collaborators
+				.team.team-invite
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					.team-member-container
+						a.show-invite.add-member
+							i.fa.fa-plus
+				//- a.button-add(href=""): i.fa.fa-plus
+
+			//- .invite-block
+				i.fa.fa-envelope-o
+				input#input_invite_email_create(type="email", placeholder="Invite by email address")
+				a.button.is-primary.is-outlined(onclick="inviteuser(create)") Invite
+	
+			a.button.is-primary(onclick="createNewExperiment()") Start Project Now
+
+

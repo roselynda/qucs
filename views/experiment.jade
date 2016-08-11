@@ -1,0 +1,90 @@
+extends layout
+
+block content
+
+	include /objects/nav-experiment
+
+	.columns.is-gapless.editor-container
+		#component_list.column.is-2.components-container
+			.editor-section-header
+				h4.text-dark.is-text-centered Components Library
+
+			//- .editor-search
+				.control.has-icon
+					input.input.search(type="search", placeholder="Search components...")
+					i.fa.fa-search
+
+			include /editor/components
+
+			.editor-actions
+				a.saveexit.button.is-outlined.is-primary.is-fullwidth(href="/dashboard") Back to Dashboard
+			
+
+		.column.canvas-column
+			//- .canvas-toolbar.is-clearfix
+			.notification.canvas-notification.is-danger
+				//- button.delete
+				i.fa.fa-warning
+				span Error message
+
+			.notification.canvas-notification.is-primary
+				i.fa.fa-check
+				span Success message
+
+			.canvas-zoom
+				a#zoom-out.button-zoom: i.fa.fa-minus
+				//- .zoom-size 100%
+				a.button-zoom.zoom-size.is-disabled 100%
+				a#zoom-in.button-zoom: i.fa.fa-plus
+
+			.canvas-reset
+				a#modal-button-reset.button-zoom Reset
+
+			
+			canvas#qucs-editor(width="1000", height="800")
+			//- hidden: placeholder for printed canvas
+			img#printedcanvas(src="#")
+
+			.canvas-ads
+				| Brought to you by IBM.
+
+			//- a#canvas-help.button-help
+				i.fa.fa-question
+
+
+
+		//- .clear-fix
+		.column.is-2.properties-container
+			.editor-section-header
+				h4.text-dark Properties
+
+			include /editor/properties
+
+			.editor-actions
+				a#modal-button-run.editor-run.button.is-primary.is-fullwidth Run Experiment
+				a#save.button.is-secondary.is-outlined.is-fullwidth Save Experiment
+				a#print.button.is-secondary.is-outlined.is-fullwidth Download Circuit
+				a#viewresults.button.is-secondary.is-outlined.is-fullwidth View Results
+				//- button#load Load Canvas
+				
+			//-.properties-panel
+				h4 Properties Panel
+				p#property-name Name
+				a.button.is-danger.is-outlined#delete-component Remove Component
+
+	
+	//- Modals
+	include /modals/edit
+	include /modals/inviteteam
+	include /modals/editname
+	include /modals/confirmremoveuser
+	include /modals/runexperiment
+	include /modals/viewresults
+	include /modals/editorhelp
+	include /modals/reset
+
+
+
+
+
+

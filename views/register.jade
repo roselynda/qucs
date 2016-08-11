@@ -1,0 +1,43 @@
+extends index
+
+block content
+	include /objects/nav-register
+
+	.register-block.is-text-centered
+		h2.text-primary Register
+
+		.notification.is-danger(style="display: none")
+			| Oops, something went wrong. Please check your form and resubmit.
+
+		form#registerform
+			.control
+				.select.is-fullwidth
+					select.is-fullwidth(name="usertype", required="required")
+						option(value="", disabled, selected) I'm a...
+						option(value="1") I'm a Student
+						option(value="0") I'm a Professional
+
+			.control
+				input.input(type="text", name="company", placeholder="Institution / Company Name", required="required")
+
+			.divider
+
+			.control
+				input.input(type="text", name="fullname", placeholder="Name", required="required")
+
+			.control
+				label.register-hint Use an .edu email to validate Academic discount
+				input.input(type="email", name="email", placeholder="Email Address", required="required")
+
+			.control
+				input.input(type="password", name="password", placeholder="Password", required="required")
+
+			.control
+				input.input(type="password", name="confirmpassword" placeholder="Confirm Password", required="required")
+
+			//- input.button.is-primary(type="submit", onclick="submitRegisterForm", value="Register")
+			a.button.is-primary(onclick="submitRegisterForm()") Register
+
+
+
+		p.terms By clicking the Register button you are agreeing to our Terms of Use

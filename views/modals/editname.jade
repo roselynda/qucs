@@ -1,0 +1,13 @@
+
+#modal-editname.modal
+	.modal-background
+	.modal-content
+		button.modal-close
+		.box.is-text-centered
+			h2.text-primary Rename Experiment
+			.control
+				//- label Experiment Name
+				input#input_exp_rename.input(type="text", value="show experiment name")
+
+			.modal-buttons
+				a.button.is-primary(onclick="updateExperimentName()") Save settings

@@ -1,0 +1,48 @@
+
+mixin addTeamMember(imgurl, name, status)
+	.team-member-container
+		.team-member
+			a.modal-button-confirmremove.close: i.fa.fa-times
+			if imgurl === ""
+				- initial = name.charAt(0)
+				span= initial
+			else 
+				img(src=imgurl)
+		h4= name
+		p= status
+
+
+#modal-edit.modal
+	.modal-background
+	.modal-content
+		button.modal-close
+		.box.is-text-centered
+			h2.text-primary Edit Experiment
+
+			.notification.is-danger(style="display: none")
+				| There isn't a user with that email address. The user needs to register with QuCs before being invited into a project.
+
+			.control
+				label Experiment Name
+				input#input_exp_edit.input(type="text")
+
+			.control
+				label Add Collaborators
+				.team.team-invite
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Group Admin")
+					//- +addTeamMember("", "Linda", "Pending Request")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Member")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Member")
+					//- +addTeamMember("/images/landing/landing_background.jpg", "Linda", "Member")
+					.team-member-container
+						a.show-invite.add-member
+							i.fa.fa-plus
+				//- a.button-add(href=""): i.fa.fa-plus
+
+			.invite-block
+				i.fa.fa-envelope-o
+				input#input_invite_email_edit(type="email", placeholder="Invite by email address")
+				a.button.is-primary.is-outlined(onclick="inviteuser('edit')") Invite
+	
+			a.button_edit_name.button.is-primary Save settings

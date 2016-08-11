@@ -1,0 +1,43 @@
+extends layout
+
+block content
+
+	include /objects/nav-dashboard
+
+	.dashboard-container
+		.account-settings.is-text-centered
+			h2.text-primary Edit Profile
+
+			.account-user
+				.user
+					//- img(style="display: none" src="")
+					span A
+
+				//- .file-upload
+					| Change Avatar
+					input#avatar_upload.input(type="file")
+
+
+			.control
+				label Profile Name
+				input#settings_name.input(type="text")
+
+			.control
+				label Email
+				input#settings_email.input(type="email")
+
+			a.button.is-primary(href="") Update Profile
+	
+
+	//- Modals
+	include /modals/create
+	include /modals/confirmremoveuser
+					
+	script.
+		var current_user = JSON.parse(localStorage.getItem('current_user'));
+		console.log(current_user['email']);
+		$("#settings_name").val(current_user.name);
+		$("#settings_email").val(current_user.email);
+
+
+

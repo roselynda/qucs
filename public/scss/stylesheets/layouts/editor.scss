@@ -1,0 +1,41 @@
+
+.editor-container{
+	height: calc(100% - 60px);
+	margin-bottom: 0 !important;
+
+	.components-container, .properties-container{
+		position: relative;
+		background: $white;
+		height: 100%;
+	}
+
+}
+
+.editor-section-header{
+	background: $lightgray;
+	padding: 15px 20px;
+
+	h4{
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+		// text-align: center;
+	}
+}
+
+.editor-search{
+	padding: 15px 10px;
+}
+
+.editor-actions{
+	position: absolute;
+	padding: 15px 10px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: $white;
+	border-top: 1px solid $lightgray;
+
+	& > .button:not(:last-of-type){
+		margin-bottom: 10px;
+	}	
+}

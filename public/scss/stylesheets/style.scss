@@ -1,0 +1,42 @@
+
+// main scss file
+// @import all scss files here
+
+// Base: colors, typography, mixins
+@import "base/colors";
+@import "base/typography";
+@import "base/mixins";
+@import "base/basestyle";
+
+// Components: buttons, navbar, etc
+@import "objects/buttons";
+@import "objects/navbar";
+@import "objects/team";
+@import "objects/input";
+@import "objects/modal";
+@import "objects/invite";
+@import "objects/dropdown";
+@import "objects/register";
+@import "objects/notification";
+@import "objects/emptydata";
+@import "objects/help";
+
+// Landing: 
+@import "objects/hero";
+@import "objects/pricing";
+@import "objects/footer";
+
+// Editor: all styling for the editor
+@import "objects/editor/canvas";
+@import "objects/editor/components";
+@import "objects/editor/properties";
+@import "objects/editor/toolbar";
+@import "objects/editor/print";
+
+// Layouts: layout styling for specific views
+@import "layouts/editor";
+@import "layouts/dashboard";
+@import "layouts/landing";
+@import "layouts/settings";
+@import "layouts/results.scss";
+

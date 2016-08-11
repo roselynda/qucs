@@ -1,0 +1,16 @@
+
+#modal-deleteproject.modal
+	.modal-background
+	.modal-content
+		button.modal-close
+		.box.is-text-centered
+			h2.text-primary Delete Experiment
+			.control
+				label Experiment name
+				h3.text-primary.experiment-title Show experiment name here
+
+			p Are you sure you want to delete this experiment?
+
+			.modal-buttons
+				a.button.is-secondary.is-outlined(onclick="deleteExperiment()") Yes
+				a.button.is-primary.is-outlined() No

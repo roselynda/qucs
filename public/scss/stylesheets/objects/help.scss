@@ -1,0 +1,29 @@
+
+.editor-help-container{
+
+	.editor-section{
+		padding: 30px 20px;
+		
+		&:nth-child(2){
+			background: $background;
+		}
+
+		img{
+			width: 90%;
+			height: 150px;
+			object-fit: contain;
+		}
+
+		h4{
+			font-family: "ProximaNovaSemibold";
+			text-transform: uppercase;
+			margin: 20px 0 10px;
+			font-size: 15px;
+		}
+
+		p{
+			font-size: 14px;
+		}
+
+	}
+}

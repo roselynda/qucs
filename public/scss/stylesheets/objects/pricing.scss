@@ -1,0 +1,121 @@
+
+.price-container{
+	@include flex(nowrap);
+	justify-content: center;
+	margin-top: 40px;
+
+	.price-block{
+		@include flex(wrap);
+		flex-basis: 24%;
+		flex-direction: column;
+		align-items: flex-start;
+		border: 1px solid $graytext;
+		background: $white;
+		border-radius: 4px;
+		position: relative;
+
+		&:nth-child(2){
+			margin: 0 20px;
+		}
+
+		.tick{
+			visibility: hidden;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: $primary;
+			color: $white;
+			border-radius: 100%;
+			width: 30px;
+			height: 30px;
+			@include centerWithFlex();
+		}
+
+		&.is-current{
+			border: 2px solid $primary;
+
+			.row{
+				border-color: $primary !important;
+				border-width: 2px !important;
+			}
+
+			.tick{
+				visibility: visible;
+			}
+		}
+
+		.row{
+			padding: 15px;
+			width: 100%;
+
+			&:nth-last-child(3){
+				border-bottom: 1px solid $graytext;
+			}
+
+			&:last-of-type{
+				align-self: flex-end;
+				margin-top: auto;
+			}
+
+			h4{
+				font-size: 16px;
+				font-family: "ProximaNovaBold";
+			}
+
+			h1{
+				font-family: "ProximaNovaSemibold";
+				margin-bottom: 10px;
+
+				sup{
+					top: -0.3em;
+					right: -0.2em;
+				}
+			}
+
+			select{
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				padding: 5px 30px 5px 15px;
+				border: 1px solid $primary;
+				background: transparent;
+				color: $graytext;
+				border-radius: 3px;
+				background-image: url('/images/landing/icon-dropdown-gray.png');
+				background-repeat: no-repeat;
+				background-position: right 7px center;
+				background-size: 10px;
+			}
+
+			ul.price-features{
+				li{
+					padding: 10px 0;
+				}
+			}
+
+		}
+	}
+}
+
+
+@media all and (max-width: 767px){
+
+	.price-container{
+		flex-wrap: wrap;
+
+		.price-block{
+			flex-basis: 100%;
+
+			&:nth-child(2){
+				margin: 20px 0;
+			}
+		}
+	}
+
+}
+
+
+
+
+
+
+

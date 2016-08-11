@@ -1,0 +1,54 @@
+
+.notification{
+
+	&.is-primary{
+		background: $primary;
+	}
+
+	&.trial-warning{
+		width: 50%;
+		margin: 30px auto;
+		font-family: "ProximaNovaSemibold";
+		text-transform: uppercase;
+	}
+}
+
+
+.mobile-block{
+	display: none;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: 21;
+	width: 100%;
+	height: 100%;
+	background: $primary;
+	color: $white;
+
+	.mobile-block-content{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+	}
+
+	h4{
+		font-size: 20px;	
+		line-height: 1.2;
+	}
+
+	img{
+		width: 100px;
+		height: 100px;
+		object-fit: contain;
+		margin-bottom: 20px;
+	}
+}
+
+@media all and (max-width: 768px){
+	.mobile-block{
+		display: block;
+	}
+}

@@ -1,0 +1,11 @@
+extends index
+
+block content
+	include /objects/nav-register
+
+	.register-block.is-wide.is-text-centered
+		h2.text-primary Choose a plan to proceed
+
+		include /objects/pricing-block
+		+pricingBlock("Start trial now", "/dashboard", "Purchase Now", "/payment", "Purchase Now", "/payment")
+			

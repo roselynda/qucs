@@ -1,0 +1,37 @@
+doctype html
+html
+  head
+    title Qucs
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="icon", type="image/png", href="/images/favicon.png")
+    
+    link(rel="stylesheet", href="libs/bulma.min.css")
+    link(rel='stylesheet', href='css/stylesheets/style.css')
+    link(rel="stylesheet" href="libs/font-awesome.min.css")
+
+    script.
+        var pathname = window.location.pathname;
+
+        if(pathname === "/register" || pathname === "/signin"){
+            if(localStorage.getItem('current_user') !== null){
+                window.location = "/dashboard";
+            }
+        }
+        else if (pathname !== "/"){
+            if(localStorage.getItem('current_user') === null){
+                window.location = "/signin";
+            }
+        }
+
+
+  body
+    block content
+
+
+    // JS
+    script(src="/javascripts/libs/jquery.min.js")
+    script(src="javascripts/init.js")
+    script(src="/javascripts/interactions/interactions.js")
+    script(src="/javascripts/interactions/user.js")
+    script(src="/javascripts/libs/smoothscroll.js")
+    

@@ -1,0 +1,93 @@
+
+img#printedcanvas{
+	display: none;
+}
+
+@media print {
+
+	body{
+		overflow: hidden;
+	}
+
+	body * {
+		visibility: hidden;
+		// display: none;
+	}
+
+	.navbar{
+		visibility: visible;
+
+		& *{
+			visibility: visible;
+		}
+
+		.navbar-right, .navbar-right *, .navbar-left .button{
+			visibility: hidden;
+		}
+	}
+
+	.editor-container{
+		visibility: visible;
+
+		.components-container, .properties-container{
+			display: none;
+		}
+	}
+
+	.canvas-container{
+		visibility: visible;
+		display: block;
+		position: fixed;
+		left: 0;
+		top: 0;
+
+		canvas{
+			display: block;
+			visibility: visible;
+		}
+	}
+
+	// img#printedcanvas{
+	// 	display: block;
+	// 	visibility: visible;
+	// 	position: fixed;
+	// 	top: 60px;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 90%;
+	// 	object-fit: contain;
+	// 	border: 1px solid $lightgray;
+	// }
+
+	#results-view, #results-view *{
+		visibility: visible;
+	}
+
+	#results-view{
+		position: absolute;
+		top: 70px;
+		width: 100%;
+
+		.results-block{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 700px;
+			padding: 0;
+
+			#results-graph, #pie-chart{
+				margin: 0 auto;
+				height: 500px;
+			}
+		}
+
+		.data-block{
+			position: absolute;
+			top: 700px;
+			left: 0;
+			width: 100%;
+		}
+	}
+
+}

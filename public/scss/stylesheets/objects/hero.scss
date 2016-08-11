@@ -1,0 +1,63 @@
+
+.hero{
+	height: 80%;
+	@include coverBackground('/images/landing/landing_background_new.jpg');
+	background-color: $background;
+	position: relative;
+
+	.hero-overlay{
+		background: rgba(0,0,0,0.1);
+	}
+
+	.hero-content{
+		position: absolute;
+		left: 10%;
+		top: 50%;
+		width: 40%;
+		transform: translate(0, -50%);
+		text-align: left;
+	
+		h1{
+			font-size: 50px;
+			font-family: "ProximaNovaBold";
+			margin-bottom: 10px;	
+		}
+
+		h2{
+			font-family: "ProximaNovaRegular";
+		}
+
+		.button{
+			margin-top: 20px;
+		}
+	}
+}
+
+@media all and (max-width: 768px){
+
+	.hero{
+		height: auto;
+
+		.hero-content{
+			position: relative;
+			width: 100%;
+			left: auto;
+			top: auto;
+			transform: translate(0, 0);
+			padding-bottom: 60px;
+
+			h1{
+				font-size: 30px;
+			}
+
+			h2{
+				font-size: 20px;
+			}
+		}
+	}
+
+}
+
+
+
+

@@ -1,0 +1,74 @@
+
+.canvas-toolbar{
+	// position: fixed;
+	// width: 65%;
+
+
+}
+
+
+.canvas-notification{
+	opacity: 0;
+	position: fixed;
+	left: 16.7%;
+	width: auto;
+	max-width: 70%;
+	z-index: 1;
+	transition: all 0.3s ease;
+
+	&.show{
+		opacity: 1;
+	}
+
+	i.fa{
+		margin-right: 10px;
+	}
+}
+
+.canvas-zoom, .canvas-reset{
+	padding: 10px 15px;
+	z-index: 1;
+	position: fixed;
+	right: 18%;
+
+	& > * {
+		display: inline-block;
+		height: 30px;
+		line-height: 30px;
+	}
+}
+
+.canvas-reset{
+	right: 27%;
+
+	a{
+		text-transform: uppercase;
+	}
+}
+
+.button-zoom{
+	border: 1px solid $lightgray;
+	background: $background;
+	font-size: 12px;
+	font-weight: 500;
+	padding: 0 10px;
+	color: $primary;
+	cursor: pointer;
+
+	.fa{
+		vertical-align: middle;
+	}
+
+	&:hover{
+		background: $lightgray;
+	}
+
+	&.zoom-size{
+		border-width: 1px 0 1px 0;
+		opacity: 1 !important;
+	}
+
+	&.is-disabled{
+		opacity: 0.5;
+	}
+}

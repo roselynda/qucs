@@ -1,0 +1,62 @@
+extends layout
+
+block content
+
+	include /objects/nav-dashboard
+
+	mixin addProjectRow(name, lastmodified)
+		tr
+			td.name= name
+			td= lastmodified
+			td
+				.team.modal-button-edit
+					.team-member
+						span A
+					.team-member
+						img(src="#")
+					.team-member
+						img(src="#")
+					.team-member-more
+						| + 5 More
+
+			td
+				a.button.is-secondary.is-outlined Open
+				a.modal-button-edit.button.is-icon.is-primary.is-outlined.extra-margin(): i.fa.fa-edit
+				a.modal-button-deleteproject.button.is-icon.is-primary.is-outlined(): i.fa.fa-trash
+
+	.dashboard-container
+		.columns.is-multiline#experiment_list
+
+			.column.is-8
+				h2.text-primary	Existing Experiments
+
+			.column.is-4
+				.control.has-icon
+					input.input.search.search-gray(type="search", placeholder="Search by experiment name...")
+					i.fa.fa-search
+
+			.column.column-for-table
+				h3.no-experiments There are currently no experiments. 
+				//- table#dashboard_list.table.is-bordered.table-dashboard
+					thead
+						tr
+							th(style="width: 30%") Project Name
+							th Last Modified
+							th Collaborators 
+							th(style="width: 20%") 
+
+					tbody.list
+						//- +addProjectRow("Experiment #1", "13.01.2016 [09:34AM] - Dr Abu")
+						//- +addProjectRow("Test Experiment", "13.01.2016 [09:34AM] - Dr Abu")
+
+
+	//- Modals
+	include /modals/create
+	include /modals/edit
+	include /modals/deleteproject
+	include /modals/leaveproject
+	include /modals/confirmremoveuser
+					
+
+
+

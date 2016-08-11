@@ -1,0 +1,60 @@
+
+.account-settings{
+	width: 50%;
+	margin: 0 auto;
+	border: 1px solid $primary;
+	padding: 40px;
+
+	&.is-wide{
+		width: 60%;
+	}
+
+	.account-user{
+		width: 100%;
+		text-align: center;
+		margin: 20px 0;
+
+		.user{
+			@include centerWithFlex();
+			width: 100px;
+			height: 100px;
+			border-radius: 100%;
+			margin: 0 auto 10px;
+			background: $background;
+			border: 2px solid $primary;
+
+			img{
+				object-fit: cover;
+			}
+
+			span{
+				color: $primary;
+				font-weight: bold;
+				font-size: 20px;
+				text-transform: uppercase;
+			}
+		}
+
+		
+	}
+	
+	.control{
+		margin-bottom: 40px;
+		text-align: center;
+		@include flex(wrap);
+		justify-content: center;
+
+		label{
+			display: block;
+			font-size: 16px;
+			width: 100%;
+			margin: 10px 0;
+		}
+
+		.input{
+			border-width: 0 0 1px 0;
+			border-radius: 0;
+			text-align: center;
+		}
+	}
+}

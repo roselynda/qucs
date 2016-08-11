@@ -1,0 +1,128 @@
+
+// buttons styling
+
+.button{
+	text-transform: uppercase;
+	font-weight: bold;
+	padding: 10px 15px;
+	height: 40px;
+	line-height: 20px;
+	letter-spacing: 1px;
+	transition: all 0.3s ease;
+
+	&.is-primary{
+		background: $primary;
+
+		&:hover, &:focus{
+			background: darken($primary, 10%);
+		}
+
+		&.is-outlined{
+			color: $primary;
+			border-color: $primary;
+
+			&:hover, &:focus{
+				background: $primary;
+				color: $white;
+			}
+		}
+
+		&.is-disabled{
+			background: transparent;
+			border-color: $lightgray;
+			color: $disabledtext;
+		}
+
+		i.fa{
+			margin-right: 10px;
+		}
+	}
+
+	&.is-secondary.is-outlined{
+		border-color: $lightgray;
+		color: $primary;
+		background: transparent;
+	}
+
+	&.is-remove{
+		color: $graytext;
+		margin-top: 10px;
+		font-size: 12px;
+		padding: 7px;
+		background: transparent;
+		height: 30px;
+	}
+
+	&.is-disabled{
+		background: transparent;
+		border-color: $lightgray;
+		color: $disabledtext;
+		opacity: 1;
+	}
+
+	&.is-icon{
+		font-size: 18px;
+		border: 0;
+		background: transparent;
+		padding: 10px;
+
+		&.extra-margin{
+			margin-left: 10px;
+		}
+
+		i.fa{
+			margin: 0;
+		}
+	}
+
+	&.is-facebook{
+		background: #3B5998;
+
+		&:hover, &:focus{
+			background: darken(#3B5998, 10%);
+		}
+	}
+
+	&.is-twitter{
+		background: #55ACEE;
+
+		&:hover, &:focus{
+			background: darken(#55ACEE, 10%);
+		}
+	}
+
+}
+
+.button-add{
+	width: 50px;
+	height: 50px;
+	border: 1px solid $primary;
+	background: $lightgray;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+	color: $primary;
+
+	&:hover, &:focus{
+		border-width: 2px;	
+		color: $primary;
+	}
+}
+
+.button-help{
+	@include centerWithFlex();
+	width: 30px;
+	height: 30px;
+	background: $lightgray;
+	border: 1px solid $primary;
+	border-radius: 100%;
+	font-size: 16px;
+	color: $primary;
+
+	&:hover, &:focus{
+		border-width: 2px;
+	}
+}
+
+

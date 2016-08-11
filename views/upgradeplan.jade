@@ -1,0 +1,34 @@
+extends layout
+
+block content
+
+	- var ontrial = true
+
+	include /objects/nav-dashboard
+
+	mixin trialWarning(daysleft)
+		if daysleft === 0
+			.notification.trial-warning.is-danger
+				| You are currently on the trial plan [#{daysleft} days left]
+		else
+			.notification.trial-warning.is-primary
+				| You are currently on the trial plan [#{daysleft} days left]
+
+	.dashboard-container.is-text-centered
+			h1.text-primary Pricing Plans
+			p Lorem ipsum Ad qui in magna veniam est sit labore. Lorem ipsum Irure occaecat dolore ullamco officia nulla occaecat ullamco.
+
+			if ontrial
+				+trialWarning(12)
+
+			include /objects/pricing-current
+			+currentPricingPlan("basic")
+	
+
+	//- Modals
+	include /modals/create
+	include /modals/confirmremoveuser
+					
+
+
+

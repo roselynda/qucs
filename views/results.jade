@@ -1,0 +1,38 @@
+extend layout
+
+block content
+
+	include /objects/nav-results
+
+	#results-view.columns(style="height: calc(100% - 70px)")
+		.column.is-8.results-block
+				//- Plotly graph
+				#pie-chart(style="width: 940px; height: 400px")
+				#results-graph(style="width: 940px; height: 650px;")
+				#results-freq(style="width: 940px; height: 650px;")
+				#results-momen(style="width: 940px; height: 650px;")
+				#results-wave(style="width: 940px; height: 650px;")
+				
+
+
+		.column.is-4.data-block
+			table.table.is-bordered.is-striped
+				tbody
+					tr
+						td.value-title Energy
+						td#results-energy 50.3
+					tr
+						td.value-title Polarization
+						td#results-polorization LD
+					tr
+						td.value-title No. of Photon
+						td#results-photon 4
+					tr
+						td.value-title Frequency
+						td#results-frequency 54.2
+					tr
+						td.value-title Wavelength
+						td#results-wavelength 14.5
+					tr
+						td.value-title Momentum
+						td#results-momentum 32.1

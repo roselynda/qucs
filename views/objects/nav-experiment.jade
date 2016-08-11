@@ -1,0 +1,19 @@
+nav.navbar
+	.navbar-left
+		.navbar-item
+			a.saveexit(href="/dashboard"): img.logo(src="/images/logo-blue.png")
+
+	.navbar-item.experiment-title
+		h3.text-primary#modal-button-editname 
+			span Experiment Name 
+			i.fa.fa-pencil
+
+	.navbar-right
+		.navbar-item
+			.team.team-inverse
+				//- .team-member.current-user
+				//- 	img(src="#")
+				//- .team-member
+				//- 	img(src="#")
+				a#modal-button-invite.add-member(onclick="loadContributors()")
+					i.fa.fa-plus

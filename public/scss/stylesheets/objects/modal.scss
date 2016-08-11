@@ -1,0 +1,89 @@
+
+.modal{
+
+	&.is-wide{
+
+		.modal-content{
+			width: 60%;
+
+			.empty-data{
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.modal-background{
+		background: rgba($lightgray, 0.5);
+	}
+
+	.modal-content{
+		position: relative;
+		width: 480px;
+
+		.box{
+			padding: 40px;
+			border-radius: 0;
+			border: 1px solid $primary;
+
+			h2{
+				margin-bottom: 40px;
+			}
+
+			.experiment-title{
+				font-family: "ProximaNovaSemibold";
+			}
+
+			.control{
+				margin-bottom: 40px;
+				text-align: center;
+				@include flex(wrap);
+				justify-content: center;
+
+				label{
+					display: block;
+					font-size: 16px;
+					width: 100%;
+					margin: 10px 0;
+				}
+
+				.input{
+					border-width: 0 0 1px 0;
+					border-radius: 0;
+					text-align: center;
+				}
+			}
+
+		}
+	}
+
+	.modal-close{
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		top: 10px;
+
+		&:before, &:after{
+			background: $primary;
+		}
+
+		&:hover{
+			background: $primary;
+
+			&:before, &:after{
+				background: $white;
+			}
+		}
+
+		&:focus{
+			outline: none;
+		}
+	}
+
+	.modal-buttons{
+		margin-top: 30px;
+
+		& > .button{
+			margin: 0 5px;
+		}
+	}
+}

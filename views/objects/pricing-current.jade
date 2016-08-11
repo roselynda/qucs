@@ -1,0 +1,56 @@
+
+mixin currentPricingPlan(currentplan)
+	.tabs.is-toggle.is-centered
+		ul#pricing-tabs
+			li#academic.is-active: a Academic
+			li#nonacademic: a Non-academic
+
+
+	.price-container
+		#basic.price-block.is-current
+			.tick: i.fa.fa-check
+			.row
+				h4.text-uppercase Basic
+			.row
+				h1.text-primary #[sup RM] 1,000
+				select.price-select
+					option(value="year") Annually
+			.row
+				ul.price-features
+					li Advanced Components & Free experimental design
+					li Free 60 days trial
+			.row
+				a.button.is-primary.is-outlined.is-fullwidth(href="") Your Current Plan
+
+		#intermediate.price-block
+			.tick: i.fa.fa-check
+			.row
+				h4.text-uppercase Intermediate
+			.row
+				h1.text-primary #[sup RM] 3,000
+				select.price-select
+					option(value="year") Annually
+					option(value="month") Monthly
+			.row
+				ul.price-features
+					li Advanced Components & Free experimental design
+					li Research Collaboration
+			.row
+				a.button.is-primary.is-fullwidth(href="/payment") Upgrade Now
+
+		#advance.price-block
+			.tick: i.fa.fa-check
+			.row
+				h4.text-uppercase Advance
+			.row
+				h1.text-primary #[sup RM] 5,000
+				select.price-select
+					option(value="year") Annually
+					option(value="month") Monthly
+			.row
+				ul.price-features
+					li Full components & Research Collaboration
+					li Decision making system
+					li Research Collaboration
+			.row
+				a.button.is-primary.is-fullwidth(href="/payment") Upgrade Now

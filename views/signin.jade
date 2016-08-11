@@ -1,0 +1,31 @@
+extends index
+
+block content
+	include /objects/nav-login
+
+	.register-block.is-text-centered
+		h2.text-primary Login
+
+		.notification.is-danger(style="display: none")
+			| Oops, email and password does not match.
+
+		form#loginform
+			.control
+				input.input(type="email", id="login_email", name="email", placeholder="Email Address")
+
+			.control
+				input.input(type="password", id="login_password", name="password", placeholder="Password")
+
+			a.forgot(href="/forgetpassword") Forgot Password?
+			a#loginuser.button.is-primary Login
+
+		//- .social-login
+			a.button.is-primary.is-facebook.is-fullwidth(href="")
+				i.fa.fa-facebook
+				| Login with Facebook 
+
+			a.button.is-primary.is-twitter.is-fullwidth(href="#")
+				i.fa.fa-twitter
+				| Login with Twitter
+
+		p.terms Don't have an account? #[a(href="/register") Register Now]

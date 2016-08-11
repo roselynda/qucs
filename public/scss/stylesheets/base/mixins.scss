@@ -1,0 +1,22 @@
+
+@mixin flex($wrap){
+	display: flex;
+	flex-wrap: $wrap;
+}
+
+@mixin flex-width($width){
+	flex: 0 1 $width;
+}
+
+@mixin coverBackground($url){
+	background-image: url($url);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@mixin centerWithFlex(){
+	display: flex;
+	justify-content: center;
+	align-items: center; 
+}

@@ -1,0 +1,21 @@
+
+mixin addProperty(name)
+	.property-row
+		p= name
+		input.input(type="number")
+
+.properties-panel
+	.with-component(style="display: none;")
+		.component-description
+			//- p Lorem ipsum Dolore do sit amet velit et consequat anim id aliquip do do minim.
+
+			a.button.is-small.is-danger.is-outlined.is-remove.is-fullwidth#delete-component Remove Component
+
+		.properties-list
+			//- +addProperty("Frequency")
+			//- +addProperty("Power")
+
+		a.button.is-small.is-primary.is-outlined.is-remove.is-fullwidth(onclick="saveProperties()") Save Properties
+
+	.without-component
+		p Click on a component to view and edit its properties.

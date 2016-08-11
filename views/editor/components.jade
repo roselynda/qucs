@@ -1,0 +1,36 @@
+
+- var authorised = false
+
+mixin addComponent(imagename, componentname, pro)
+	if authorised
+		.component-block(id=componentname, draggable="true")
+			.image-container
+				img(src="/images/components/" + imagename + ".png")
+			h4.name= componentname
+	else if !authorised && pro
+		.component-block.is-disabled(id=componentname, draggable="true")
+			.image-container
+				.pro-block #[i.fa.fa-lock]
+				img(src="/images/components/" + imagename + ".png")
+			h4.name= componentname
+	else
+		.component-block(id=componentname, draggable="true")
+			.image-container
+				if pro
+					.pro-block #[i.fa.fa-lock]
+				img(src="/images/components/" + imagename + ".png")
+			h4.name= componentname
+
+
+.components-accordion.list
+	
+	//- .components-group-label.is-clearfix
+		h4.text-gray.text-uppercase.is-pulled-left Lasers
+		i.fa.fa-minus.is-pulled-right
+	//- .components-group-container.active
+		+addComponent("CwLaser", "CW Laser")
+		+addComponent("VCSELlaser", "VCSEL Laser")
+
+
+
+
